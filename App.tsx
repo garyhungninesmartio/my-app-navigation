@@ -12,7 +12,11 @@ function App(): JSX.Element {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Details">
         <Stack.Screen name="Home" component={HomeLandingPage} />
-        <Stack.Screen name="Details" component={DetailsPage} />
+        <Stack.Screen
+          name="Details"
+          component={DetailsPage}
+          options={{title: 'My Details'}} // This is the title in the header, not props passed to the actual page component
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
