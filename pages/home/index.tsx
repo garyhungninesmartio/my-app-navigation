@@ -5,7 +5,7 @@ import {RootStackScreenParams} from '../../App';
 
 type Props = NativeStackScreenProps<RootStackScreenParams, 'Home'>;
 
-const HomeLandingPage = ({navigation}: Props) => {
+const HomeLandingPage: React.FC<Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
