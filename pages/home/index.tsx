@@ -1,10 +1,18 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 import React from 'react';
+import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackScreenParams} from '../../App';
 
-const HomeLandingPage = () => {
+type Props = NativeStackScreenProps<RootStackScreenParams, 'Home'>;
+
+const HomeLandingPage = ({navigation}: Props) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
+      <Button
+        title={'Go to Details'}
+        onPress={() => navigation.navigate('Details')}
+      />
     </View>
   );
 };

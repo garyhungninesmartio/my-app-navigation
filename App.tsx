@@ -2,15 +2,20 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+export type RootStackScreenParams = {
+  Home: undefined; // this is our actual screen name, but it doesn't take any props so we give undefined
+  Details: undefined;
+};
+
 import HomeLandingPage from './pages/home';
 import DetailsPage from './pages/details';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackScreenParams>();
 
 function App(): JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Details">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeLandingPage} />
         <Stack.Screen
           name="Details"
