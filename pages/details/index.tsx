@@ -13,6 +13,8 @@ const DetailsPage: React.FC<Props> = ({navigation}) => {
         title={'Go to Details ... AGAIN'}
         onPress={() => navigation.push('Details')}
       />
+      {/*No matter how many details page is pushed to stack, this will return to the home page*/}
+      <Button title={'Go Home'} onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
