@@ -13,8 +13,14 @@ const DetailsPage: React.FC<Props> = ({navigation}) => {
         title={'Go to Details ... AGAIN'}
         onPress={() => navigation.push('Details')}
       />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
       {/*No matter how many details page is pushed to stack, this will return to the home page*/}
       <Button title={'Go Home'} onPress={() => navigation.navigate('Home')} />
+      {/*Because home screen happens to be the first stacked page, it has same effect as navigate(home) */}
+      <Button
+        title="Go back to first screen in stack"
+        onPress={() => navigation.popToTop()}
+      />
     </View>
   );
 };
