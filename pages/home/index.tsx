@@ -11,7 +11,7 @@ const HomeLandingPage: React.FC<Props> = ({navigation}) => {
       <Text>Home Screen</Text>
       <Button
         title={'Go to Details'}
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Details', {itemID: 102})}
       />
     </View>
   );

@@ -4,14 +4,16 @@ import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackScreenParams} from '../../App';
 
 type Props = NativeStackScreenProps<RootStackScreenParams, 'Details'>;
-const DetailsPage: React.FC<Props> = ({navigation}) => {
+const DetailsPage: React.FC<Props> = ({route, navigation}) => {
+  const {itemID} = route.params;
   return (
     <View style={styles.container}>
       <Text>Details Screen</Text>
+      <Text>{itemID}</Text>
       {/*We are already on a page called Details, the only way to navigate again is to push */}
       <Button
         title={'Go to Details ... AGAIN'}
-        onPress={() => navigation.push('Details')}
+        onPress={() => navigation.push('Details', {itemID: 78})}
       />
       <Button title="Go back" onPress={() => navigation.goBack()} />
       {/*No matter how many details page is pushed to stack, this will return to the home page*/}

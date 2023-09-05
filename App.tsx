@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 export type RootStackScreenParams = {
   Home: undefined; // this is our actual screen name, but it doesn't take any props so we give undefined
-  Details: undefined;
+  Details: {itemID: number};
 };
 
 import HomeLandingPage from './pages/home';
